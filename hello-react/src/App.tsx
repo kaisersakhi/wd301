@@ -1,4 +1,4 @@
-import TaskCard from "./TaskCard.jsx";
+import TaskCard from "./TaskCard";
 
 function App() {
     return (
