@@ -1,5 +1,13 @@
 import './TaskCard.css'
-const TaskCard = (props) => {
+import React from "react";
+
+interface TaskCardProps {
+    title: string,
+    dueDate?: string,
+    completedAtDate?: string,
+    assignee: string;
+}
+const TaskCard: React.FC<TaskCardProps> = (props) => {
     let dateString = props.completedAtDate
         ? `Completed on: ${props.completedAtDate}`
         : `Due on: ${props.dueDate}`
