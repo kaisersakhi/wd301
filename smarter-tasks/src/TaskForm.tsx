@@ -15,23 +15,19 @@ class TaskForm extends React.Component<TaskFormProps, TaskFormState> {
     constructor(props: TaskFormProps) {
         super(props);
         this.state = {
-            title: "",
-            description: "",
-            dueDate: ""
+            title: "", description: "", dueDate: ""
         }
     }
 
     addTask: React.FormEventHandler<HTMLFormElement> = (event) => {
         event.preventDefault();
         const newTask = {
-            title: this.state.title,
-            description: this.state.description,
-            dueDate: this.state.dueDate
+            title: this.state.title, description: this.state.description, dueDate: this.state.dueDate
         };
-        if (this.state.title.length > 1 && this.state.title.length > 1) {
+        if (this.state.title.length > 0 && this.state.dueDate.length > 0) {
             this.props.addTask(newTask)
+            this.setState({title: "", description: "", dueDate: ""})
         }
-        this.setState({title: "", description: "", dueDate: ""})
     };
 
     titleChanged: React.ChangeEventHandler<HTMLInputElement> = (event) => {
@@ -48,37 +44,35 @@ class TaskForm extends React.Component<TaskFormProps, TaskFormState> {
     }
 
     render(): React.ReactNode {
-        return (
-            <form onSubmit={this.addTask} className="gap-1">
-                <input
-                    type="text"
-                    id="todoTitle"
-                    value={this.state.title}
-                    onChange={this.titleChanged} placeholder="Task Name"
-                    className="border w-full my1"
-                />
-                <input
-                    type="text" id="todoDescription"
-                    value={this.state.description}
-                    onChange={this.descriptionChanged}
-                    placeholder="Task Description"
-                    className="border w-full my1"
-                />
-                <input
-                    type="text"
-                    id="todoDueDate"
-                    value={this.state.dueDate} onChange={this.dueDateChanged}
-                    placeholder="Due Date"
-                    className="border w-full my1"
-                />
-                <button
-                    type="submit"
-                    id="addTaskButton"
-                    className="w-full mt-3 bg-gray-300 rounded-md">
-                    Add item
-                </button>
-            </form>
-        )
+        return (<form onSubmit={this.addTask} className="gap-1">
+            <input
+                type="text"
+                id="todoTitle"
+                value={this.state.title}
+                onChange={this.titleChanged} placeholder="Task Name"
+                className="border w-full my1"
+            />
+            <input
+                type="text" id="todoDescription"
+                value={this.state.description}
+                onChange={this.descriptionChanged}
+                placeholder="Task Description"
+                className="border w-full my1"
+            />
+            <input
+                type="text"
+                id="todoDueDate"
+                value={this.state.dueDate} onChange={this.dueDateChanged}
+                placeholder="Due Date"
+                className="border w-full my1"
+            />
+            <button
+                type="submit"
+                id="addTaskButton"
+                className="w-full mt-3 bg-gray-300 rounded-md">
+                Add item
+            </button>
+        </form>)
     }
 }
 
