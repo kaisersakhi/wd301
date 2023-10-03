@@ -20,7 +20,6 @@ const TaskForm = (props: TaskFormProps) => {
   const [formState, setFormState] = React.useState<TaskFormState>(initialState);
 
   const titleChanged: React.ChangeEventHandler<HTMLInputElement> = (event) => {
-    console.log(`Title changed: ${event.target.value}`);
     setFormState({ ...formState, title: event.target.value });
   };
 
@@ -39,6 +38,7 @@ const TaskForm = (props: TaskFormProps) => {
   const addTask: React.FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
     const newTask = {
+      id: "",
       title: formState.title,
       description: formState.description,
       dueDate: formState.dueDate,

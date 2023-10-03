@@ -18,6 +18,7 @@ const TaskApp = () => {
   );
 
   const addTask = (task: TaskItem) => {
+    task.id = Math.random().toString(36).substring(2, 9);
     setTaskAppState({
       tasks: [...taskAppState.tasks, task],
     });

@@ -8,14 +8,8 @@ interface Props {
 
 const TaskList = (props: Props) => {
   const list = props.tasks.map((task, idx) => (
-    <li>
-      <Task
-        key={idx}
-        title={task.title}
-        description={task.description}
-        dueDate={task.dueDate}
-        onDelete={props.onRemove}
-      />
+    <li key={idx}>
+      <Task key={idx} task={task} onDelete={props.onRemove} />
     </li>
   ));
 
