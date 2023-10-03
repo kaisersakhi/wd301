@@ -10,11 +10,12 @@ import TaskDetailPage from "./pages/TaskDetailPage.tsx";
 import Signin from "./pages/Signin.tsx";
 import ProtectedRoute from "./ProtectedRoute.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import { ReactNode } from "react";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Navigate to="/home" replace />,
+    element: (<Navigate to="/home" replace />) as ReactNode,
   },
   {
     path: "/signin",
