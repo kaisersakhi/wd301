@@ -6,10 +6,10 @@ import {
 import HomePage from "./pages/HomePage";
 import TaskListPage from "./pages/TaskListPage";
 import Layout from "./Layout.tsx";
-import TaskDetailPage from "./pages/TaskDetailPage.tsx";
+import TaskDetailsPage from "./pages/TaskDetailsPage.tsx";
 import Signin from "./pages/Signin.tsx";
 import ProtectedRoute from "./ProtectedRoute.tsx";
-import NotFound from "./pages/NotFound.tsx";
+import Notfound from "./pages/Notfound.tsx";
 import { ReactNode } from "react";
 
 const router = createBrowserRouter([
@@ -38,13 +38,13 @@ const router = createBrowserRouter([
       },
       {
         path: "tasks/:id",
-        element: <TaskDetailPage />,
+        element: <TaskDetailsPage />,
       },
     ],
   },
   {
     path: "/notfound",
-    element: <NotFound />,
+    element: <Notfound />,
   },
   {
     path: "*",

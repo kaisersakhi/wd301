@@ -11,7 +11,7 @@ interface TaskAppState {
   tasks: TaskItem[];
 }
 
-const TaskDetailPage: React.FC = () => {
+const TaskDetailsPage: React.FC = () => {
   const { id } = useParams<TaskDetailPageParams>();
   const [taskAppState] = useLocalStorage<TaskAppState>("tasks", {
     tasks: [],
@@ -30,4 +30,4 @@ const TaskDetailPage: React.FC = () => {
   );
 };
 
-export default TaskDetailPage;
+export default TaskDetailsPage;

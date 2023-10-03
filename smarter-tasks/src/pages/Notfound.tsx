@@ -1,4 +1,4 @@
-export default function NotFound() {
+export default function Notfound() {
   return (
     <div className=" flex items-center pt-10">
       <div className="w-full text-center">
